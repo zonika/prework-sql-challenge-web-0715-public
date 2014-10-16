@@ -15,7 +15,7 @@ The table looks like the following:
 
 |id |name|age|breed|
 |---|----|---|-----|
-|1  |Maro| 6 |Scottish Fold|
+|1  |Maru| 6 |Scottish Fold|
 |2  |Nala| 3 |Siamese|
 |3  |Grumpy Cat|2|Ragdoll|
 |4  |Lil Bub|3|dwarf|
