@@ -22,17 +22,16 @@ The table looks like the following:
 
 In fact, if you've gone through the [ZetCode SQL Course](http://zetcode.com/db/sqlite/) and are comfortable creating a table in SQLite3, consider plugging this data into a table to play around with it. This isn't necessary to complete this challenge, but encouraged.
 
-**Note:** The queries you will be inputting are CASE SENSITIVE. 
+**Note:** The queries you will be inputting are CASE SENSITIVE. SQL statements and keywords like SELECT, FROM, COUNT, WHERE, UPDATE, DELETE, etc should be in all caps. Note your statements should also end with a semi-colon and table name and column names are lower case.
 
 Let's take a look at the first question, with the answer given:
 
 ```ruby
-it 'returns all of the data in the cats table' do
-  expect(is_correct('SELECT * FROM cats;', 0)).to eq(true)
-end 
+  it 'creates a table called cats' do 
+    your_answer = "CREATE TABLE cats;"
+    expect(your_answer).to eq(answer_1)
+  end
 ```
-
-SQL statements and keywords like SELECT, FROM, COUNT, WHERE, UPDATE, DELETE, etc should be in all caps. Note your statements should also end with a semi-colon and table name and column names are lower case.
 
 ## Directions
 
@@ -40,11 +39,16 @@ SQL statements and keywords like SELECT, FROM, COUNT, WHERE, UPDATE, DELETE, etc
 
 2. Open up the file in the `spec` directory called `sql_challenge_spec.rb`. This is our RSpec file where the tests for this challenge live.
 
-3. Fill in the blanks (wherever you see '__') with the your answers.
+3. Fill in your answers in quotes:
+
+```ruby
+your_answer = __
+```
 
 4. When you've finished answering all of the questions, run `rspec` to make sure you're seeing all green.
 
 5. When you're finished (all of the tests pass and you're seeing green in your terminal):
+
 * Stage the changes you made: `git add .`
 * Commit those changes with a message: `git commit -m "all done"`
 * Push those changed up to your fork: `git push origin master`
