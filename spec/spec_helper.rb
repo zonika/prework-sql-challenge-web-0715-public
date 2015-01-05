@@ -7,7 +7,7 @@ RSpec.configure do |config|
   json = Base64.decode64(encoded_answers)
   answers = JSON.parse(json)
 
-  answers.each_with_index do |index, ans|
+  answers.each do |index, ans|
     define_method("answer_#{index}") do 
       ans
     end
