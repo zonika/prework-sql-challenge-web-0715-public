@@ -1,16 +1,18 @@
 require 'base64'
+require 'json'
 
 RSpec.configure do |config|
-  encoded_answers = "Q1JFQVRFIFRBQkxFIGNhdHM7LCBTRUxFQ1QgKiBGUk9NIGNhdHM7LCBTRUxF\nQ1QgQ09VTlQoKikgRlJPTSBjYXRzOywgU0VMRUNUIG5hbWUgRlJPTSBjYXRz\nIFdIRVJFIGlkPTI7LCBVUERBVEUgY2F0cyBTRVQgYWdlPTcgV0hFUkUgaWQ9\nMTssIFNFTEVDVCAqIEZST00gY2F0cyBPUkRFUiBCWSBhZ2U7LCBERUxFVEUg\nRlJPTSBjYXRzIFdIRVJFIGlkPTQ7LCBEUk9QIFRBQkxFIGNhdHM7\n"
-  decoded_answers = Base64.decode64(encoded_answers)
+  
+  encoded_answers = "eyIxIjoiQ1JFQVRFIFRBQkxFIGNhdHM7IiwiMiI6IlNFTEVDVCAqIEZST00g\nY2F0czsiLCIzIjoiU0VMRUNUIENPVU5UKCopIEZST00gY2F0czsiLCI0Ijpb\nIlNFTEVDVCBuYW1lIEZST00gY2F0cyBXSEVSRSBpZCA9IDI7IiwiU0VMRUNU\nIG5hbWUgRlJPTSBjYXRzIFdIRVJFIGlkPTI7Il0sIjUiOlsiVVBEQVRFIGNh\ndHMgU0VUIGFnZSA9IDcgV0hFUkUgbmFtZSA9IFwiTWFydVwiIiwiVVBEQVRF\nIGNhdHMgU0VUIGFnZT03IFdIRVJFIG5hbWU9XCJNYXJ1XCIiXSwiNiI6IlNF\nTEVDVCAqIEZST00gY2F0cyBPUkRFUiBCWSBhZ2U7IiwiNyI6WyJERUxFVEUg\nRlJPTSBjYXRzIFdIRVJFIGlkID0gNDsiLCJERUxFVEUgRlJPTSBjYXRzIFdI\nRVJFIGlkPTQ7Il0sIjgiOiJEUk9QIFRBQkxFIGNhdHM7In0=\n"
+  json = Base64.decode64(encoded_answers)
+  answers = JSON.parse(json)
 
-  answers = decoded_answers.split(", ")
-
-  answers.each_with_index do |answer, index|
-    define_method("answer_#{index+1}") do 
-      answer
+  answers.each_with_index do |index, ans|
+    define_method("answer_#{index}") do 
+      ans
     end
   end
+
 end
 
 def __

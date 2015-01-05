@@ -1,4 +1,5 @@
 describe "SQL Challenge" do
+
   it 'creates a table called cats' do 
     your_answer = __
     expect(your_answer).to eq(answer_1)
@@ -16,12 +17,12 @@ describe "SQL Challenge" do
 
   it 'returns the name of the cat with the id of 2' do
     your_answer = __
-    expect(your_answer).to eq(answer_4)
+    expect(your_answer).to satisfy {|s| answer_4.include?(s) }
   end 
 
-  it "updates Maru's age to 7" do 
+  it "finds Maru by name and updates her age to 7" do 
     your_answer = __
-    expect(your_answer).to eq(answer_5)
+    expect(your_answer).to satisfy {|s| answer_5.include?(s) }
   end
 
   it 'selects all of the data from the cats table and orders by age' do 
@@ -29,13 +30,14 @@ describe "SQL Challenge" do
     expect(your_answer).to eq(answer_6)
   end
 
-  it 'deletes Lil Bub from the cats table, searching by id' do 
+  it 'deletes the cat with an id of 4 from the cats table' do 
     your_answer = __
-    expect(your_answer).to eq(answer_7)
+    expect(your_answer).to satisfy {|s| answer_7.include?(s) }
   end
 
   it 'deletes the cats table' do 
     your_answer = __
     expect(your_answer).to eq(answer_8)
   end
+  
 end
