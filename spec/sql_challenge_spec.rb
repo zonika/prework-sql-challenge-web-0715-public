@@ -1,6 +1,6 @@
 describe "SQL Challenge" do
   it 'creates a table called cats' do 
-    your_answer = __ # replace the __ with your answer in "quotes"
+    your_answer = __
     expect(your_answer).to eq(answer_1)
   end
 
