@@ -45,7 +45,7 @@ Let's take a look at the first question, with the answer given:
 your_answer = __
 ```
 
-4. When you've finished answering all of the questions, run `ironboard` to make sure you're seeing all green.
+4. When you've finished answering all of the questions, run `learn` to make sure you're seeing all green.
 
 5. When you're finished (all of the tests pass and you're seeing green in your terminal):
 
